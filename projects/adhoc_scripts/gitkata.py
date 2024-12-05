@@ -13,13 +13,13 @@ def lskata():
 
 def getkata(kata):
     """Displays kata"""
-    if kata == 1: # update local repo from master
-        update_local_repo_from_master = """
-            asd
-            asd
-        """
-        print(update_local_repo_from_master)
+    convert_answer = int(kata)
+    
+    # simple kata
+    yes = "asd"
+    if convert_answer == 1:
+        print(f"asd {yes}")
 
 lskata()
-pick = input('Number: ')
-getkata(pick)
+kata = input('Number: ')
+getkata(kata)

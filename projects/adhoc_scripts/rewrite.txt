@@ -1,0 +1,88 @@
+function Get-ELGitKata {
+    <#
+        .DESCRIPTION
+            A function that helps with learning the git kata from getting-github
+        .LINK
+            https://github.com/michaeltlombardi/getting-github
+        #>
+    param (
+        [bool]$NoInput = $true,
+        [switch]$Detail,
+        [switch]$OneTimeSetup,
+        [switch]$AfterPR,
+        [switch]$SimpleDevBranch
+    )
+        
+    if ($OneTimeSetup) {
+        $Msg = "git remote add upstream https://github.com/mainrepouser/mainrepo
+        - Adds remote upstream repo`n
+    git config --global user.name 'username'
+    git config --global user.email 'email@email.com'
+        - Adds username and email to git`n"
+        $NoInput = $false
+    }
+    
+    if ($Detail) {
+        $Msg = "git checkout main
+        - Makes sure main is the local repos targeted branch`n
+    git fetch upstream
+        - Retrieves changes and code updates from upstream since last time you ran the command`n
+    git rebase upstream/main
+        - Adds the newly fetched changes from upstream to your local repo`n
+    git push -u origin main
+        - Finally, pushes the changes to your fork
+    "
+        $NoInput = $false
+    }
+    
+    if ($AfterPR) {
+        $Msg = "git push -u origin prBranchName
+            - Pushes new changes to up to local fork
+    git checkout main
+            - Checks out local main repo
+    git push -d origin prBranchName
+            - Deletes local fork branch in github
+    git branch -d prBranchName
+            - Deletes local fork branch on the machine
+    git remote prune origin
+            - Prune stale references
+    git fetch origin
+            - Fetches origin repo, verify that branch is removed
+    "
+    
+        $NoInput = $false
+    }
+
+    if ($SimpleDevBranch) {
+    $Msg = "
+git checkout main
+    - Switch to the main branch
+git pull origin main
+    - Ensure main is up-to-date with the remote repository
+git checkout -b devBranchName
+    - Create and switch to a new development branch
+git add .
+    - Stage changes for commit
+git commit -m 'Your commit message'
+    - Commit your changes
+git checkout main
+    - Switch back to the main branch
+git pull origin main
+    - Ensure the main branch is up-to-date
+git merge devBranchName
+    - Merge the development branch into main
+git push origin main
+    - Push the updated main branch to the remote repository
+git branch -d devBranchName
+    - Delete the development branch locally
+"
+    $NoInput = $false
+    }
+    
+    if ($NoInput) {
+        $Msg = "git checkout main`ngit fetch upstream`ngit rebase upstream/main`ngit push -u origin main"
+    }
+    
+    Clear-Host
+    Write-Output $Msg
+}

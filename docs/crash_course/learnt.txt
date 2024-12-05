@@ -1,0 +1,20 @@
+In python you can do rapid software development
+In python you can create modules, classes and functions
+In python you can work with numeric data types, like int, float, double, decimal
+In python you can work with string data types, literal strings and chars
+In python you can work with immutable data types, like tuple, string or int
+In python you can also work with mutable data types, like list, dict and set
+In python you can do standard conditional operations if, elif or else
+In python you have access to the python standard library with predefined common classes
+In python you use indentation instead of c-style curly brackets
+In python you create a .py file, and execute it from the terminal using python ./file.py
+In python you can create a variable using the `var = "var"` syntax
+In python you can calculate to 1_000_000 really fast
+In python you can ask for user input using the input() function
+In python you can display variables in a string using the f-string: f"{var}"
+In python you can do lots of math, statistics and numbers development
+In python you can use django to create web applications
+In python you can use pygame
+In python you can work with files and paths, absolute or relative, using the pathlib class Path
+In python you can randomize one item from a collection of items using the choice() function from the random class
+In python you can sort a list, dict or set by calling the sorted() function or , for types that supports it, using the sort() method

@@ -1,2 +1,4 @@
 docs/crash_course/__pycache__
 __pycache__
+.mypy_cache
+.venv

@@ -1,3 +1,7 @@
+"""
+    This script helps me remember some git command sequence situations
+    Next step: Rebuild it as a CLI and publish it as a binary
+"""
 from pathlib import Path
 import json
 

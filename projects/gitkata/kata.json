@@ -1,0 +1,33 @@
+{
+    "Update local from master": {
+        "step_1": "git checkout main",
+        "step_2": "git fetch upstream",
+        "step_3": "git rebase upstream/main",
+        "step_4": "git push -u origin main"
+    },
+    "One time config": {
+        "step_1": "git remote add upstream https://github.com/mainrepouser/mainrepo",
+        "step_2": "git config --global user.name 'username'",
+        "step_3": "git config --global user.email 'email@mail.com'"
+    },
+    "After pull request": {
+        "step_1": "git push -u origin prBranchName",
+        "step_2": "git checkout main",
+        "step_3": "git push -d origin prBranchname",
+        "step_4": "git branch -d prBranchname",
+        "step_5": "git remote prune origin",
+        "step_6": "git fetch origin"
+    },
+    "Local dev branch": {
+        "step_one": "git checkout main",
+        "step_two": "git pull origin main",
+        "step_3": "git checkout -b devBranchName",
+        "step_4": "git add .",
+        "step_5": "git commit -m 'commit msg'",
+        "step_6": "git checkout main",
+        "step_7": "git pull origin main",
+        "step_8": "git merge devBranchName",
+        "step_9": "git push origin main",
+        "step_10": "git branch -d devBranchName"
+    }
+}
